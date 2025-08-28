@@ -16,27 +16,10 @@ def register():
         confirm = request.form.get("confirm_password")
 
         if password != confirm:
-            return "Passwords do not match!"
+            return "Passwords do not match. Please enter again."
         return f"Registered with {email}"
     
     return render_template("register.html")
-
-# Dummy routes for navbar buttons
-@app.route("/find-partner")
-def find_partner():
-    return "🔎 Find Partner Page"
-
-@app.route("/activity")
-def activity():
-    return "📊 My Activity Page"
-
-@app.route("/profile")
-def profile():
-    return "👤 Profile Page"
-
-@app.route("/logout")
-def logout():
-    return "👋 Logged out!"
 
 
 if __name__ == "__main__":
