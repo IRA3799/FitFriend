@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitFriend - Register</title>
+  <!-- Flask will load CSS from static folder -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <!-- Flask buttons should use <a> for links -->
+    <a href="/find-partner"><button>Find Partner</button></a>
+    <a href="/activity"><button>My Activity</button></a>
+    <a href="/profile"><button>Profile</button></a>
+    <a href="/logout"><button>Logout</button></a>
+  </div>
+
+  <div class="center-container">
+    <div class="app-header">
+      <h1>FitFriend</h1>
+      <p>Find your perfect workout partner</p>
+    </div>
+
+    <div class="login-container">
+      <h2>Register</h2>
+      <!-- This form posts to Flask's /register route -->
+      <form action="{{ url_for('register') }}" method="POST">
+        <div class="form-group">
+          <label for="student_email">Student Email</label>
+          <input type="email" id="student_email" name="student_email" placeholder="you@student.mmu.edu.my" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" required />
+        </div>
+
+        <p><button class="login-btn" type="submit">Register</button></p>
+      </form>
+    </div>
+  </div>
+
+  <p>Already have an account? <a href="#">Login</a></p>
+
+</body>
+</html>
